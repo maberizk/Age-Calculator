@@ -10,30 +10,42 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
     <title>Frontend Mentor | Age calculator app</title>
   </head>
   <body>
     <form class="form">
-      <label for="day">Day</label>
-      <br />
-      <input name="day" type="number" />
-      <br />
-      <label for="month">Month</label>
-      <br />
-      <input name="month" type="number" />
-      <br />
-      <label for="year">Year</label>
-      <br />
-      <input name="year" type="number" />
-      <button type="submit">Submit</button>
+      <div>
+        <label for="day">Day</label>
+        <br />
+        <input name="day" type="number" id="day" />
+      </div>
+      <div>
+        <label for="month">Month</label>
+        <br />
+        <input name="month" type="number" id="month" />
+      </div>
+      <div>
+        <label for="year">Year</label>
+        <br />
+        <input name="year" type="number" id="year" />
+      </div>
+      <button type="button" name="submit" value="Submit" onclick="age()">
+        Submit
+      </button>
     </form>
 
     <div class="results">
-      <p>-- years</p>
-      <p>-- months</p>
-      <p>-- days</p>
+      <p><span id="finalYear"></span> years</p>
+      <p><span id="finalMonth"></span> months</p>
+      <p><span id="finalDay"></span> days</p>
     </div>
   </body>
 </html>
