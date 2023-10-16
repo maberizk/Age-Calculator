@@ -1,10 +1,10 @@
 function age() {
-// getting input values 
+  // getting input values
   let day = document.getElementById("day").value;
   let month = document.getElementById("month").value;
   let year = document.getElementById("year").value;
 
-//   creates date object, representing current date and time 
+  //   creates date object, representing current date and time/ methods are built in with new Date
   let currentDate = new Date();
   let getDay = currentDate.getDay();
   let getMonth = 1 + currentDate.getMonth();
