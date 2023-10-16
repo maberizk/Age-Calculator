@@ -24,17 +24,20 @@
     <div class="container">
       <form class="form">
         <div>
-          <label for="day">DAY</label>
+          <label id="dayLabel" for="day">DAY</label>
           <input name="day" type="number" id="day" placeholder="DD" />
+          <div id="errorDay"></div>
         </div>
         <div>
-          <label for="month">MONTH</label>
+          <label id="monthLabel" for="month">MONTH</label>
 
           <input name="month" type="number" id="month" placeholder="MM" />
+          <div id="errorMonth"></div>
         </div>
         <div>
-          <label for="year">YEAR</label>
+          <label id="yearLabel" for="year">YEAR</label>
           <input name="year" type="number" id="year" placeholder="YYYY" />
+          <div id="errorYear"></div>
         </div>
       </form>
       <div class="button-line">
@@ -43,7 +46,6 @@
           <img src="./assets/images/icon-arrow.svg" />
         </button>
       </div>
-
       <div class="results">
         <p><span id="finalYear">--</span> years</p>
         <p><span id="finalMonth">--</span> months</p>
