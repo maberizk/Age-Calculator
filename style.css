@@ -83,9 +83,9 @@ p {
   color: hsl(0, 0%, 8%);
 }
 
-#errorDay,
-#errorYear,
-#errorMonth {
+#errorDay > p,
+#errorYear > p,
+#errorMonth > p {
   font-size: 0.8rem;
   font-weight: 400;
   font-style: italic;
@@ -126,5 +126,11 @@ p {
     position: relative;
     right: 50%;
     margin: 8% 0;
+  }
+
+  #errorDay > p,
+  #errorYear > p,
+  #errorMonth > p {
+    padding: 8px;
   }
 }

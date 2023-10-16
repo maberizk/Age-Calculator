@@ -34,15 +34,22 @@ function age() {
   document.getElementById("finalDay").innerHTML = finalDate;
 }
 
+function appendErrorMessage(container, message) {
+  const errorMessage = document.createElement("p");
+  errorMessage.textContent = message;
+  container.appendChild(errorMessage);
+}
+
 function errorValidation() {
   let errorDay = document.getElementById("errorDay");
   let day = document.getElementById("day");
   let dayLabel = document.getElementById("dayLabel");
+  errorDay.innerHTML = "";
+
   if (day.value > 31 || day.value < 1) {
-    errorDay.innerText = "Must be valid day";
+    appendErrorMessage(errorDay, "Must be a valid day");
     day.style.borderColor = "hsl(0, 100%, 67%)";
     dayLabel.style.color = "hsl(0, 100%, 67%)";
-    return false;
   } else {
     errorDay.innerText = "";
   }
@@ -51,10 +58,9 @@ function errorValidation() {
   let month = document.getElementById("month");
   let monthLabel = document.getElementById("monthLabel");
   if (month.value > 12 || month.value < 1) {
-    errorMonth.innerText = "Must be valid month";
+    appendErrorMessage(errorMonth, "Must be a valid month");
     month.style.borderColor = "hsl(0, 100%, 67%)";
     monthLabel.style.color = "hsl(0, 100%, 67%)";
-    return false;
   } else {
     errorMonth.innerText = "";
   }
@@ -62,13 +68,16 @@ function errorValidation() {
   let errorYear = document.getElementById("errorYear");
   let year = document.getElementById("year");
   if (year.value > 2023 || year.value < 1900) {
-    errorYear.innerText = "Must be in the past";
+    appendErrorMessage(errorYear, "Must be in the past");
     year.style.borderColor = "hsl(0, 100%, 67%)";
     yearLabel.style.color = "hsl(0, 100%, 67%)";
-    return false;
   } else {
     errorYear.innerText = "";
   }
 
-  return true;
+  return (
+    errorDay.innerHTML === "" &&
+    errorMonth.innerHTML === "" &&
+    errorYear.innerHTML === ""
+  ); 
 }
